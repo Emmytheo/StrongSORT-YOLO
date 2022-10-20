@@ -109,7 +109,7 @@ def detect(save_img=False, line_thickness=1):
         view_img = check_imshow()
         cudnn.benchmark = True  # set True to speed up constant image size inference
         dataset = LoadStreams(source, img_size=imgsz, stride=stride)
-        nr_sources = len(dataset)
+        nr_sources = len(dataset.sources)
     else:
         dataset = LoadImages(source, img_size=imgsz, stride=stride)
         nr_sources = 1
